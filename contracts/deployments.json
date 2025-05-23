@@ -1,0 +1,38 @@
+{
+  "0x2a392c8286d1e2521984865818f919b8a7c701a4": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0xcdb639259b2e4d95d0e277a26e2e29cbd2968e76": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x14de908f274f03674998a731746268ca1a1a3409": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x0cad26a7bb29a15c6d488f67f343a44d1a5182eb": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x41f679aab9429536d30b53547c152b1380eeeb3f": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x14e6325ef833056e6c55e34f453a8d45cbe8fad1": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0xcedf2ffcf1e232335f7fea36f10d3f3ac821277f": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x82168ada05c51cd31c5ac9e9e7da09e104faa2b2": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  },
+  "0x1fd58bc6d7122629537ccbff2ce796e6dd657e3d": {
+    "contract": "Voting",
+    "artifact": "contracts/voiting.sol:Voting"
+  }
+}

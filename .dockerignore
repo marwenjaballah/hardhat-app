@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+Dockerfile
+cache
+artifacts
+typechain-types
+.dockerignore
+.env

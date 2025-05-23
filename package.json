@@ -1,0 +1,15 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.19",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "dotenv": "^16.4.7"
+  },
+  "scripts": {
+    "watch:deploy": "nodemon --watch contracts --ext sol --exec 'echo Watching Solidity files...'"
+  }
+}
