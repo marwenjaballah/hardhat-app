@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract SimpleStorage {
+contract Add {
     uint256 public value;
 
     event ValueChanged(uint256 newValue, address changedBy);

@@ -1,0 +1,331 @@
+{
+  "0x10eeac9d439fbe2c99a5e9e42f05b3793eea7ffa": {
+    "network": "localhost",
+    "contractName": "SimpleTextStorage",
+    "contractAddress": "0x10EEAC9d439FBe2C99A5e9E42f05b3793EeA7Ffa",
+    "timestamp": "2025-06-03T09:07:11.156Z",
+    "deploymentType": "local",
+    "artifactPath": "artifacts/contracts/SimpleTextStorage.sol/SimpleTextStorage.json",
+    "sourcePath": "./contracts/SimpleTextStorage.sol",
+    "uid": null,
+    "abi": [
+      {
+        "type": "event",
+        "inputs": [
+          {
+            "name": "newText",
+            "type": "string",
+            "baseType": "string",
+            "indexed": false,
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null
+          }
+        ],
+        "name": "TextUpdated",
+        "anonymous": false
+      },
+      {
+        "type": "function",
+        "inputs": [],
+        "name": "getText",
+        "constant": true,
+        "outputs": [
+          {
+            "name": "",
+            "type": "string",
+            "baseType": "string",
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null
+          }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+      },
+      {
+        "type": "function",
+        "inputs": [
+          {
+            "name": "newText",
+            "type": "string",
+            "baseType": "string",
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null
+          }
+        ],
+        "name": "setText",
+        "constant": false,
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "payable": false,
+        "gas": null
+      },
+      {
+        "type": "function",
+        "inputs": [],
+        "name": "storedText",
+        "constant": true,
+        "outputs": [
+          {
+            "name": "",
+            "type": "string",
+            "baseType": "string",
+            "components": null,
+            "arrayLength": null,
+            "arrayChildren": null
+          }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+      }
+    ],
+    "transactionHash": "0x0e87dcb261c4a1364e439bd62790621b80603f1b84ba585eb54ff6eb8b446c01"
+  },
+  "0xd9830794a8f38d081bcb520c2a208c866360094d": {
+    "network": "localhost",
+    "contractName": "Add",
+    "contractAddress": "0xd9830794a8f38d081bcb520c2a208c866360094d",
+    "timestamp": "2025-06-03T09:10:01.506Z",
+    "deploymentType": "external_abi",
+    "artifactPath": null,
+    "uid": null,
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "name_",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol_",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "transfer",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ]
+  },
+  "0xae5edd3f0b67ff2dfa8b66ad24ec697e6c823a57": {
+    "network": "localhost",
+    "contractName": "SimpleERC20",
+    "contractAddress": "0xae5edd3f0b67ff2dfa8b66ad24ec697e6c823a57",
+    "timestamp": "2025-06-03T09:10:23.352Z",
+    "deploymentType": "external_code",
+    "artifactPath": null,
+    "uid": null,
+    "abi": [
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "name_",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol_",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "from",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "value",
+            "type": "uint256"
+          }
+        ],
+        "name": "Transfer",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "totalSupply",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "name": "transfer",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ]
+  }
+}

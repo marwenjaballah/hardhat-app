@@ -2,12 +2,18 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/uuid": "^10.0.0",
+    "@types/yargs": "^17.0.33",
     "hardhat": "^2.22.19",
     "nodemon": "^3.1.9"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.0",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "fs-extra": "^11.3.0",
+    "uuid": "^11.1.0",
+    "yargs": "^17.7.2"
   },
   "scripts": {
     "watch:deploy": "nodemon --watch contracts --ext sol --exec 'echo Watching Solidity files...'"

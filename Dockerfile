@@ -1,21 +1,18 @@
 FROM node:18-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy package files and install dependencies
+# Install system dependencies
+RUN apk add --no-cache python3 make g++ git
+
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-# Ensure binaries are executable
-RUN chmod -R 755 node_modules/.bin
-
-# Copy the rest of the project files
+# Copy the rest of the project
 COPY . .
 
-EXPOSE 8540
-
-# Run the Hardhat Ignition deployment command
-
-# CMD sh -c "yes | npx hardhat ignition deploy ./ignition/modules/Lock.ts --network localhost"
-
-CMD [ "npm", "run", "watch:deploy" ]
+# Default command
+CMD ["npx", "hardhat", "node"]

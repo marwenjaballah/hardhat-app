@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hardhat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PRIVATE_KEY=358e575ae7b35a78b8fbfa50e0764bfae5e4c7d433375bd7248a4f8b8afdaf96
+      - LOCAL_RPC_URL=https://dc009e9026.westeurope.cloudapp.azure.com
+    command: tail -f /dev/null  # Keep container running 
