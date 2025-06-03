@@ -129,15 +129,19 @@ async function main() {
   }
   console.log(`✅ ABI loaded successfully with ${abi.filter(f=>f.type === 'function').length} functions.`);
 
-  // 2. Verify contract accessibility (optional but recommended)
+  // 2. Verify contract accessibility (required for saving)
   // Note: This requires the script to be run with a provider connected to `networkDeployedOn`
   // If hardhatArguments.network is different, this might fail or give misleading results.
   // For true verification, ensure --network matches networkDeployedOn or use a generic provider.
   if (hardhatArguments.network && hardhatArguments.network !== networkDeployedOn) {
       console.warn(`⚠️ Verification check will use Hardhat network '${hardhatArguments.network}', but contract is on '${networkDeployedOn}'. Results may be inaccurate if networks differ.`);
   }
-  await verifyContractAccessibility(contractAddress, abi);
-
+  
+  const isVerified = await verifyContractAccessibility(contractAddress, abi);
+  
+  if (!isVerified) {
+    throw new Error("❌ Contract verification failed. Cannot save to deployments.json. Please check the contract address, ABI, and network configuration.");
+  }
 
 /*  // 3. Prepare and save local artifact (flat file, not a directory)
 const contractUid = uuidv4();
@@ -165,7 +169,7 @@ const artifactData = {
 fs.writeFileSync(localArtifactPath, JSON.stringify(artifactData, null, 2));
 console.log(`✅ Local artifact for '${contractName}' saved to: ${path.relative(process.cwd(), localArtifactPath)}`); */
 
-  // 4. Save to deployments.json
+  // 4. Save to deployments.json (only after successful verification)
   //const relativeArtifactPath = path.relative(process.cwd(), localArtifactPath).replace(/\\/g, "/");
   const deploymentEntry: DeploymentInfo = {
     network: networkDeployedOn, // Network where it's actually deployed
