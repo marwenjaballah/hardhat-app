@@ -131,13 +131,18 @@ async function main() {
         throw new Error("❌ ABI not found in compiled artifact.");
     }
 
-    // 3. Verify contract accessibility (optional)
+    // 3. Verify contract accessibility (required for saving)
     if (hardhatArguments.network && hardhatArguments.network !== networkDeployedOn) {
       console.warn(`⚠️ Verification check will use Hardhat network '${hardhatArguments.network}', but contract is on '${networkDeployedOn}'. Results may be inaccurate if networks differ.`);
     }
-    await verifyContractAccessibility(contractAddress, abi);
+    
+    const isVerified = await verifyContractAccessibility(contractAddress, abi);
+    
+    if (!isVerified) {
+      throw new Error("❌ Contract verification failed. Cannot save to deployments.json. Please check the contract address, compiled ABI, and network configuration.");
+    }
 
-    // 4. Save to deployments.json
+    // 4. Save to deployments.json (only after successful verification)
     //const relativeHardhatArtifactPath = path.relative(process.cwd(), hardhatArtifactPath).replace(/\\/g, "/");
     //const relativeSourcePath = path.relative(process.cwd(), sourceFilePath).replace(/\\/g, "/");
 
@@ -171,8 +176,6 @@ async function main() {
 
     console.log("\n📦 Deployment result (JSON):");
     console.log(JSON.stringify(backendOutput, null, 2));
-
-
 
   } catch (error) {
     console.error("❌ Failed to import contract:", error);
