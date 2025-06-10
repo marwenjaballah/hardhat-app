@@ -2,13 +2,27 @@ version: '3.8'
 
 services:
   hardhat:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: viconee/hardhat-app:latest
+    container_name: hardhat
+    ports:
+      - "8540:8540"
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./contracts:/usr/src/app/contracts
+    working_dir: /usr/src/app
     environment:
-      - PRIVATE_KEY=358e575ae7b35a78b8fbfa50e0764bfae5e4c7d433375bd7248a4f8b8afdaf96
-      - LOCAL_RPC_URL=https://dc009e9026.westeurope.cloudapp.azure.com
-    command: tail -f /dev/null  # Keep container running 
+      - LOCAL_RPC_URL=https://d65a52d570.westeurope.cloudapp.azure.com
+      - PRIVATE_KEY=189b07fe54392da4d7e4a55b1c27b059c931e696a3d5267f4868bd83e251f66d
+    networks:
+      - cmborze15000hs3zn228dur37
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8540"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  node_modules:
+
+networks:
+  cmborze15000hs3zn228dur37:
+    external: true 
